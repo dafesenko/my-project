@@ -1,40 +1,83 @@
-require('modules');
+// require('modules');
+import { users } from './modules/users'
 
-// debugger;
-import { one as arr } from './modules/helpers'
-const message = text => `text is ${text}`;
+const loginBtn = document.querySelector('.btn-check-login');
 
-const newText = message(arr[1]);
+loginBtn.addEventListener('click', getFormInput);
 
-console.log(newText);
-// console.log( one );
-// console.log(` one = ${0 + 1}`);
-// console.log(` two = ${1 + 1}`);
-
-function resolveAfter2Seconds(x) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(x);
-      }, 2000);
-    });
+function isEmpty(value) {
+  if (value.trim().length > 0) {
+    return true;
   }
-  
-  async function add1(x) {
-    const a = await resolveAfter2Seconds(20);
-    const b = await resolveAfter2Seconds(30);
-    return x + a + b;
+  return;
+}
+
+function showMessage(message) {
+  const messageEl = document.querySelector('.message');
+  const p = document.createElement('p');
+  p.textContent = message;
+  messageEl.appendChild(p);
+
+  setTimeout(() => messageEl.removeChild(p), 3000);
+}
+
+function validateInput(input, elem) {
+  if (isEmpty(input)) {
+    return true;
   }
-  
-  add1(10).then(v => {
-    console.log(v);  // prints 60 after 4 seconds.
-  });
-  
-  async function add2(x) {
-    const a = resolveAfter2Seconds(20);
-    const b = resolveAfter2Seconds(30);
-    return x + await a + await b;
+
+  showMessage(`Заполните поле '${elem.textContent}''`);
+  return;
+}
+
+function getUser({login, password}) {
+  const userProfile = users.find(field => field.login === login);
+
+  if (!userProfile) {
+    showMessage('Неправильный Login');
+    return;
   }
+  const passwordCheck = userProfile.password === password;
+
+  if (!passwordCheck) {
+    showMessage('Неправильный Password');
+    return;
+  }
+
+  return userProfile;
+}
+
+function getFormInput(e) {
+  e.preventDefault();
+  const form = document.querySelector('.m-form-login');
+  const inputs = form.getElementsByTagName('input');
+  const inputsValidationArr = [...inputs].map((input) => validateInput(input.value, input.parentElement));
+  const inputsValid = inputsValidationArr.every(res => res === true);
   
-  add2(10).then(v => {
-    console.log(v);  // prints 60 after 2 seconds.
-  });
+  if (inputsValid) {
+    let login = form.elements['login'];
+    let password = form.elements['password'];
+    const loginData = {
+      login: login.value,
+      password: password.value
+    }
+
+    const validationPassed = getUser(loginData);
+    if (!validationPassed) {
+      login.value = '';
+      password.value = '';
+      return;
+    }
+    console.log(validationPassed);
+    showMessage(`Добро пожаловать, ${validationPassed.login}!`);
+
+    var state = { 'page_id': 1, 'user_id': 5 };
+    var title = 'Main';
+    var url = '/main.html';
+
+    history.pushState(null, '', url);
+    // console.log(history.pushState);
+
+
+  }
+}

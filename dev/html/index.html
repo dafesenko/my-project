@@ -1,8 +1,16 @@
 @@include('header.html')
         <div class="container">
-                <p>Works properly. Start your development!</p>
-                <div class="l-section">
-                        <p><span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At voluptate labore ea facere vero. Consequuntur cupiditate, sunt omnis deleniti, accusamus consectetur nobis recusandae, culpa eligendi voluptatibus possimus architecto eius quia.</span><span>Dolores repellat alias enim consectetur, iure voluptatum repellendus illum aut, explicabo voluptate cupiditate deleniti magni reiciendis tenetur? Eligendi iste fugiat, quasi harum deleniti sit illo, dignissimos doloremque maxime, tenetur voluptate!</span></p>
+                <div class="l-container-form">
+                        <form action="" class="m-form m-form-login">
+                                <label class="m-form__label">Login
+                                        <input type="text" name="login" placeholder="Введите логин" class="int">
+                                </label>
+                                <label class="m-form__label">Password
+                                        <input type="password" name="password" placeholder="Введите пароль" class="int">
+                                </label>
+                                <button class="btn btn-check-login" type="submit">Send</button>
+                        </form>
+                        <div class="message"></div>
                 </div>
         </div>
 @@include('footer.html')
