@@ -6,10 +6,7 @@ const loginBtn = document.querySelector('.btn-check-login');
 loginBtn.addEventListener('click', getFormInput);
 
 function isEmpty(value) {
-  if (value.trim().length > 0) {
-    return true;
-  }
-  return;
+  return value.trim().length > 0;
 }
 
 function showMessage(message) {
@@ -22,11 +19,12 @@ function showMessage(message) {
 }
 
 function validateInput(input, elem) {
+  console.log(elem);
   if (isEmpty(input)) {
     return true;
   }
 
-  showMessage(`Заполните поле '${elem.textContent}''`);
+  showMessage(`Заполните поле ${elem.parentElement.textContent}`);
   return;
 }
 
@@ -51,7 +49,7 @@ function getFormInput(e) {
   e.preventDefault();
   const form = document.querySelector('.m-form-login');
   const inputs = form.getElementsByTagName('input');
-  const inputsValidationArr = [...inputs].map((input) => validateInput(input.value, input.parentElement));
+  const inputsValidationArr = [...inputs].map((input) => validateInput(input.value, input));
   const inputsValid = inputsValidationArr.every(res => res === true);
   
   if (inputsValid) {
