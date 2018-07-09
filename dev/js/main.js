@@ -1,9 +1,27 @@
 // require('modules');
-import { users } from './modules/users'
+import { users } from './modules/users';
+import HTTP from './modules/http';
 
 const loginBtn = document.querySelector('.btn-check-login');
+const http = new HTTP();
 
 loginBtn.addEventListener('click', getFormInput);
+
+http.get('https://jsonplaceholder.typicode.com/users')
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
+http.post('https://jsonplaceholder.typicode.com/users', {name: 'Dima', age: 28})
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
+http.put('https://jsonplaceholder.typicode.com/users/1', {name: 'Dima', age: 28})
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
+http.delete('https://jsonplaceholder.typicode.com/users/1')
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
 
 function isEmpty(value) {
   return value.trim().length > 0;

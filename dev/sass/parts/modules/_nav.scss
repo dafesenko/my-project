@@ -4,7 +4,13 @@
 
 .m-nav {
 	padding: $padding;
-	ul {
+	display: flex;
+	.navigation {
 		@include reset-list;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		padding-right: 15px;
 	}
 }

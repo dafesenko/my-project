@@ -10,16 +10,34 @@
             Icons for different devices you can generate with - http://realfavicongenerator.net
             Place generated files in the dev/static/favicons directory.
         -->
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="images/fav.png"> -->
+
+        <link rel="apple-touch-icon" sizes="180x180" href="assets\img\favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets\img\favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets\img\favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
         <link rel="stylesheet" href="/assets/css/bundle.css">
     </head>
     <body>
-       	<div class="l-header">
-            <div class="container">
+       	<header class="l-header">
+            <div class="container l-header__container">
+                <div class="m-logo">
+                    <a href="" class="m-logo__link">
+                        <img src="assets\img\logo\logo.png" alt="Visit US" class="m-logo__img" title="Visit US">
+                    </a>
+                </div>
                 <nav class="m-nav">
-                    <ul>
-                        <li><a href="404.html">Example Menu Item</a></li>
-                        <li><a href="#">Main page</a></li>
+                    <ul class="navigation">
+                        <li><a href="/" data-route="login" class="m-nav__item">Login</a></li>
+                        <li><a href="/main.html" data-route="about" class="m-nav__item">About</a></li>
+                        <li><a href="/menu" data-route="menu" class="m-nav__item">Menu</a></li>
+                        <li><a href="/reservation" data-route="reservation" class="m-nav__item">Reservation</a></li>
+                        <li><a href="/contacts" data-route="contacts" class="m-nav__item">Contacts</a></li>
+                        <!-- <li><a href="404.html">Example Menu Item</a></li> -->
                     </ul>
                 </nav>
             </div>
-        </div>
+        </header>

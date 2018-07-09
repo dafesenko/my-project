@@ -9,11 +9,12 @@ $black-light:               lighten(#000, 25%) !default;
 $white:                     #fff !default;
 $white-darken:				darken($white, 35%);
 $red:						red !default;
+$special-grey:            #2A363B;
 
 // ===================================================================
 // Theme colors
 // ===================================================================
-$color-primary:             $black !default;
+$color-primary:       $black !default;
 $color-accent:				$red !default;
 
 $color-shadow:				rgba($black, .125);
@@ -24,6 +25,8 @@ $color-shadow:				rgba($black, .125);
 $text-link: 				$color-accent !default;
 $color-text-main: 			$black-light !default;
 $color-headers: 			$black-light !default;
+$header-background: $special-grey;
+$footer-background: $special-grey;
 
 // links
 $color-link:                $color-accent !default;

@@ -5,4 +5,11 @@
 .l-header {
 	border-bottom: $b-s-base $white-darken solid;
 	margin-bottom: $margin;
+	background-color: $header-background;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
