@@ -4,9 +4,29 @@
 
 .btn {
   @include m-btn-size;
-  background-color: $btn-default-bg;
+
+  &-default {
+    background-color: $btn-default-bg;
+    border: $b-s-base solid $btn-default-border;
+
+    @include hover {
+      background-color: darken($btn-default-bg, 20%);
+      border-color: darken($btn-default-bg, 20%);
+      color: $white;
+    }
+  }
+  
+  &-primary {
+    background-color: $btn-primary-bg;
+    border: $b-s-base solid $btn-primary-border;
+
+    @include hover {
+      background-color: lighten($btn-primary-bg, 20%);
+      border-color: lighten($btn-primary-bg, 20%);
+      color: $white;
+    }
+  }
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: $b-s-base solid $btn-default-border;
   color: $btn-default-color;
   cursor: pointer;
   display: inline-block;
@@ -31,11 +51,7 @@
     opacity:.65;
     box-shadow:none;
   }
-  @include hover {
-    background-color: darken($btn-default-bg, 20%);
-    border-color: darken($btn-default-bg, 20%);
-    color: $white;
-  }
+  
   &.full {
     width: 100%;
   }

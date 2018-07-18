@@ -4,5 +4,11 @@
 
 .l-section {
     background-color: #ccc;
+    padding-top: $header-height;
+
+    &::after {
+        content: '';
+        border-bottom: 2px solid #000;
+    }
 }
 

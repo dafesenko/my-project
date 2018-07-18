@@ -3,7 +3,8 @@
 //============================================== 
 
 .l-container {
-
+    padding-top: $header-height;
+    
     &-form {
         width: 50%;
         margin: 0 auto;

@@ -32,6 +32,7 @@ $cursor-resize:           		 col-resize !default;
 
 // Padding/margin
 // =============================================
+$header-height:   65px;
 $padding: 					 	$grid-gutter-width/2 !default;
 $margin: 					 	$grid-gutter-width/2 !default;
 
@@ -52,6 +53,7 @@ $btn-font-weight:                normal !default;
 
 $btn-default-color:              #fff !default;
 $btn-default-bg:                 $color-accent !default;
+$btn-primary-bg:                 $color-primary;
 $btn-default-border:             darken($color-accent, 1%) !default;
 
 $btn-primary-color:              #fff !default;

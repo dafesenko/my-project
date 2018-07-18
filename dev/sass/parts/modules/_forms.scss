@@ -3,7 +3,10 @@
 //============================================== 
 
 .m-form {
-  
+
+    &-login {
+        padding-bottom: 60px;
+    }
 
     &__label {
         display: block;

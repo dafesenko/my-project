@@ -1,20 +1,12 @@
 @@include('header.html')
-        <div class="container">
-                <div class="l-container-form">
-                        <form action="" class="m-form m-form-login">
-                                <h1>Войдите в свой аккаунт</h1>      
-                                <label class="m-form__label">Login
-                                        <input type="text" name="login" placeholder="Введите логин" title="Не меньше четырех символов" class="int">
-                                </label>
-                                <label class="m-form__label">Phone Number
-                                        <input type="number" max="10" name="phone" placeholder="Введите номер телефона" title="Десять цифр" class="int">
-                                </label>
-                                <label class="m-form__label">Password
-                                        <input type="password" name="password" placeholder="Введите пароль" class="int">
-                                </label>
-                                <button class="btn btn-check-login" type="submit">Log in</button>
-                        </form>
-                        <div class="message"></div>
-                </div>
-        </div>
+
+@@include('login.html')
+<main>
+        @@include('about.html')
+        @@include('menu.html')
+        @@include('contacts.html')
+
+
+</main>
+
 @@include('footer.html')
