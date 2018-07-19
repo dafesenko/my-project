@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="l-container l-container-form" id="reservation">
+            <form action="" class="m-form m-form-reservation">
+                    <h1 class="m-form-title">Table Reservation</h1>      
+                    <label class="m-form__label">Name
+                            <input type="text" name="name" placeholder="Enter name" title="Не меньше четырех символов" class="int">
+                    </label>
+                    <label class="m-form__label">Phone Number
+                            <input type="number" max="10" name="phone" placeholder="Введите номер телефона" title="Десять цифр" class="int">
+                    </label>
+                    <label class="m-form__label">Password
+                            <input type="password" name="password" placeholder="Введите пароль" class="int">
+                    </label>
+                    <label class="m-form__label">Date
+                            <input type="text" name="date" placeholder="Выберите дату" class="int" id="pick-date">
+                    </label>
+                    <label class="m-form__label">Number of Attendees
+                        <select id="data_8" name="data_8" style="width : 250px;" class="form-control"><option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>10+ (Specify in Comments)</option>
+                          </select>
+                    </label>
+                    <label class="m-form__label">Comment
+                        <input type="text" name="name" placeholder="Enter comment" title="Не меньше четырех символов" class="int">
+                    </label>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
+                    <script type="text/javascript">new Pikaday({ field: document.getElementById('pick-date') });</script>
+                    <button class="btn btn-default btn-check-login" type="submit">Reserve</button>
+                    <!-- <button data-scroll href="#menu" class="btn btn-primary btn-skip-login">Skip</button> -->
+            </form>
+            <div class="message-reserve"></div>
+    </div>
+  </div>

@@ -5,8 +5,18 @@
                 </div>
                 <div class="social">
                     <!-- <img src="assets\img\svg\sprite.svg" alt="" srcset=""> -->
-
-                    <img src="assets\img\svg\facebook-box.svg" alt="" srcset="">
+                    <a href="#" class="social-link">
+                        <img src="assets\img\svg\facebook-box.svg" alt="" srcset="">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="assets\img\svg\google-plus-box.svg" alt="" srcset="">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="assets\img\svg\instagram.svg" alt="" srcset="">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="assets\img\svg\twitter-box.svg" alt="" srcset="">
+                    </a>
                 </div>
             </div>
         </footer>
@@ -15,29 +25,27 @@
         <!-- Smooth Scroll CDN -->
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
         <!-- Google Map -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbm6KT0oyhe6FaK7Buh0_btwfAf4AKSE&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbm6KT0oyhe6FaK7Buh0_btwfAf4AKSE&callback=myMap" async defer></script>
         <script>
             function myMap() {
-//    console.log(map);
-  var myCenter = new google.maps.LatLng(50.529491,30.454880);
-  var mapProp= {
-      center: myCenter,
-      zoom: 15,
-      mapTypeId:google.maps.MapTypeId.HYBRID
-  };
+                var myCenter = new google.maps.LatLng(50.529491,30.454880);
+                var mapProp= {
+                    center: myCenter,
+                    zoom: 15,
+                    mapTypeId:google.maps.MapTypeId.HYBRID
+                };
 
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
-  marker.setMap(map);
+                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
+                marker.setMap(map);
 
-  google.maps.event.addListener(marker,'click',function() {
-    var infowindow = new google.maps.InfoWindow({
-      content:"Visit Us!"
-    });
-  infowindow.open(map,marker);
-  });
-}
-        
+                google.maps.event.addListener(marker,'click',function() {
+                    var infowindow = new google.maps.InfoWindow({
+                        content:"Visit Us!"
+                    });
+                    infowindow.open(map,marker);
+                });
+            }
         </script>
         <script src="assets/js/bundle.js"></script>
 

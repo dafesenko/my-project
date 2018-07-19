@@ -4,7 +4,11 @@
 
 .m-form {
 
-    &-login {
+    &-title {
+        text-align: center;
+    }
+
+    &-login, &-reservation {
         padding-bottom: 60px;
     }
 

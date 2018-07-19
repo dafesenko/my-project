@@ -3,5 +3,12 @@
 //============================================== 
 
 .l-footer {
+  padding: $padding-large-vertical 0;
   background-color: $footer-background;
+  text-align: center;
+  
+  .copyright p{
+    color: $btn-default-color;
+    // color: white;
+  }
 }
